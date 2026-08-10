@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AI4ALL GE-79 mild cognitive impairment machine-learning research poster.">
+  <title>GE-79 MCI Research Poster</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#overview">Skip to poster</a>
+  <header class="masthead" id="top">
+    <a class="brand" href="#overview"><span class="brain">◎</span><span><b>AI4ALL</b><small>Summer Cohort 2026</small></span></a>
+    <div class="title"><div><strong>GE-79 MCI Explorer</strong><span>Research Poster</span></div><p>Can supervised machine learning classify Mild Cognitive Impairment<br>in older adults with Type 2 Diabetes?</p></div>
+    <button class="menu" aria-expanded="false" aria-controls="nav">☰</button>
+  </header>
+  <nav class="nav" id="nav">
+    <a href="#overview">Overview</a><a href="#data">Data</a><a href="#methods">Methods</a><a href="#results">Results</a><a href="#responsible">Responsible AI</a><a href="#impact">Impact</a>
+  </nav>
+
+  <main>
+    <section class="hero shell" id="overview">
+      <div class="hero-copy"><p class="eyebrow">AI4ALL IGNITE · GROUP 6C · SUMMER 2026</p><h1>Predicting Mild Cognitive Impairment in Older Adults with Type 2 Diabetes</h1><p class="lead">Clinical and MRI-derived biomarkers with machine learning using the PhysioNet CDED GE-79 dataset.</p><div class="actions"><a class="button" href="#results">Explore findings ↓</a><a href="https://github.com/elizabethhannan/AI4ALL_ClinicalMedicalDiabeties_EH-PRIVATE" target="_blank" rel="noreferrer">Research repository ↗</a></div></div>
+      <div class="visual"><div class="ring r1"></div><div class="ring r2"></div><div class="brain-art"><i></i><i></i><i></i><i></i><span></span></div><div class="stat s1"><b>75</b><small>participants</small></div><div class="stat s2"><b>14</b><small>shared features</small></div><div class="stat s3"><b>3</b><small>classifiers</small></div></div>
+      <div class="hero-band"><b>OBJECTIVE</b> Evaluate whether glycemic, vascular, perfusion, and white-matter features can help classify MCI.</div>
+    </section>
+
+    <section class="section shell" id="data">
+      <header class="section-head"><div><p class="eyebrow">CLINICAL CONTEXT</p><h2>Type 2 Diabetes &amp; Cognitive Decline</h2></div><p>Subtle cognitive decline can begin years before symptoms become obvious. Earlier identification may create a wider window for monitoring and intervention.</p></header>
+      <div class="path"><article><span>01</span><h3>Type 2 Diabetes</h3><p>Long-term metabolic stress elevates the risk of microvascular damage.</p></article><b>→</b><article><span>02</span><h3>Vascular change</h3><p>Disrupted blood flow can contribute to white-matter changes in the brain.</p></article><b>→</b><article><span>03</span><h3>Cognitive risk</h3><p>These changes are associated with mild cognitive impairment in older adults.</p></article></div>
+      <div class="dataset"><div><b>75</b><small>GE-79 participants</small></div><div><b>46</b><small>original variables</small></div><div><b>55</b><small>no impairment</small></div><div><b>20</b><small>impaired</small></div><p><strong>GE-75</strong> supports documentation and future validation; it was not merged into the GE-79 pipeline.</p></div>
+    </section>
+
+    <section class="section shell dark" id="methods">
+      <header class="section-head"><div><p class="eyebrow">METHODS</p><h2>One shared pipeline. Three models.</h2></div><p>All classifiers used the same 14 biomarker features and five-fold stratified cross-validation for direct comparison.</p></header>
+      <div class="cards models"><article class="mint"><span>↗</span><small>MODEL 1</small><h3>Logistic Regression</h3><p>Interpretable baseline for the binary MCI outcome.</p></article><article class="sea"><span>⌘</span><small>MODEL 2</small><h3>Decision Tree</h3><p>Readable branching paths with the strongest impaired-recall tradeoff.</p></article><article class="lime"><span>♧</span><small>MODEL 3</small><h3>Random Forest</h3><p>Ensemble classifier with the strongest aggregate performance.</p></article><article class="deep"><span>14</span><small>SHARED INPUTS</small><h3>Feature Selection</h3><p>Stable importance ranking plus science anchors defined the feature set.</p></article></div>
+      <div class="prep"><span>01 <b>Identifiers removed</b></span><span>02 <b>Leakage controlled</b></span><span>03 <b>Median imputation</b></span><span>04 <b>Missingness retained</b></span><span>05 <b>Shared preprocessing</b></span><span>06 <b>Stratified 5-fold CV</b></span></div>
+    </section>
+
+    <section class="section shell" id="results">
+      <header class="section-head"><div><p class="eyebrow">MODEL RESULTS</p><h2>Accuracy alone misses the point.</h2></div><p>Because 55 of 75 participants were in the no-impairment class, five measures provide a more honest comparison.</p></header>
+      <div class="results"><div class="chart"><div class="legend"><span>Logistic Regression</span><span>Decision Tree</span><span>Random Forest</span></div><div id="chart" aria-label="Model metric comparison chart"></div><small>Whole-number percentages shown. Replace values in script.js if final exported metrics change.</small></div><div class="findings"><article class="winner"><small>01 · BEST OVERALL</small><h3>Random Forest</h3><p>Strongest aggregate performance across accuracy, macro-F1, ROC-AUC, and PR-AUC.</p></article><article><small>02</small><h3>Decision Tree</h3><p>More sensitive to impaired cases, revealing a consequential model-selection tradeoff.</p></article><article><small>03</small><h3>Logistic Regression</h3><p>A stable, interpretable baseline with moderate macro-F1.</p></article></div></div>
+      <div class="signals"><span>KEY SIGNALS</span><b>Systolic blood pressure</b><b>White matter hyperintensities</b><b>Glucose</b><b>sVCAM</b></div>
+    </section>
+
+    <section class="section shell dark" id="responsible">
+      <header class="section-head"><div><p class="eyebrow">RESPONSIBLE AI</p><h2>Limitations belong in the foreground.</h2></div><p>Interpretation is constrained by sample size, class balance, cohort composition, missing data, and feature-selection choices.</p></header>
+      <div class="cards risks"><article class="ratio"><b>55:20</b><h3>Class imbalance</h3><p>Accuracy can look reassuring while impaired participants remain harder to identify.</p></article><article class="mint"><span>⌖</span><h3>Selection bias</h3><p>A single-site cohort may not generalize across populations or regions.</p></article><article class="mint"><span>≋</span><h3>Measurement bias</h3><p>Imputation choices and device variability may introduce systematic error.</p></article><article class="mint"><span>◇</span><h3>Feature bias</h3><p>Biomarker selection reflects available evidence and gaps in the literature.</p></article></div>
+      <div class="frameworks"><span>ALIGNED WITH</span><b>NIST AI RMF</b><b>OECD AI Principles</b><b>PROBAST-AI</b><b>TRIPOD-AI</b><b>VerifyWise</b></div>
+    </section>
+
+    <section class="section shell" id="impact">
+      <header class="section-head"><div><p class="eyebrow">POTENTIAL IMPACT &amp; FUTURE WORK</p><h2>What comes next matters more than one promising score.</h2></div></header>
+      <div class="impact"><article><small>POTENTIAL IMPACT</small><h3>Earlier identification may improve monitoring and support.</h3><ul><li>False positives can trigger unnecessary testing.</li><li>False negatives risk delayed care.</li><li>Equity must be evaluated across populations.</li></ul></article><article><small>FUTURE WORK</small><h3>Validate before any real-world application.</h3><ul><li>Evaluate GE-75 for future validation.</li><li>Use larger, diverse, multi-site cohorts.</li><li>Pair SHAP with longitudinal and causal analysis.</li></ul></article></div>
+      <blockquote>Additional validation using larger, more diverse, multi-center populations is essential before explainable machine learning could support reliable identification of cognitive decline.</blockquote>
+    </section>
+  </main>
+
+  <footer><div class="footer-grid"><article><span>♢</span><div><b>NOT A DIAGNOSTIC TOOL.</b><p>For research and educational purposes only. Do not use for clinical decision-making.</p></div></article><article><span>⌂</span><div><b>AI4ALL SUMMER COHORT 2026</b><p>Building AI for equity. Advancing diversity in science and technology.</p></div></article><article><span>♡</span><div><b>SPECIAL ACKNOWLEDGMENT</b><p>Professor Joyce Williams for guidance, mentorship, and support.</p></div></article><article><span>▤</span><div><b>DATASET CITATION (APA 7)</b><p>Novak, V., &amp; Quispe, R. (2022). <i>Cerebromicrovascular disease in elderly with diabetes.</i> PhysioNet.</p></div></article></div><div class="footline">GE-79 MCI Research Poster · Group 6C <a href="#top">Back to top ↑</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- End note: responsive poster structure checked against the presentation content. -->
