@@ -1,0 +1,33 @@
+# GitHub Pages Configuration for AI4ALL Group 6C GE-79 Project
+# This tells GitHub Pages to use Jekyll to render your site
+
+theme: jekyll-theme-cayman
+title: "Predicting Mild Cognitive Impairment in Older Adults with Type 2 Diabetes"
+description: "AI4ALL Ignite 2026 · Group 6C · Machine Learning & Clinical Data Analysis"
+show_downloads: true
+show_github_issue_link: false
+
+# Markdown processor
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Plugins
+plugins:
+  - jekyll-github-metadata
+  - jekyll-readme-index
+
+# Exclude files from the build
+exclude:
+  - README.md
+  - SETUP.md
+  - FOLDER_STRUCTURE.md
+  - .gitignore
+  - .git
+  - docs/
+  - data/
+  - models/
+  - node_modules/
+  - Gemfile
+  - Gemfile.lock
