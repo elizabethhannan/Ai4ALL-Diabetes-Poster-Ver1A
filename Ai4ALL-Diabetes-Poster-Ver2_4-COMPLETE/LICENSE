@@ -1,0 +1,33 @@
+Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
+
+This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
+
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made
+- NonCommercial — You may not use the material for commercial purposes
+
+For more information, see: https://creativecommons.org/licenses/by-nc/4.0/
+
+===============================================================================
+
+DATA LICENSE NOTICE:
+
+The underlying PhysioNet dataset (GE-79, CDED/1.0.1) is subject to PhysioNet's
+credentialed-access and citation terms. Access and use must comply with:
+
+Novak, V., & Quispe, R. (2020). Cerebral-perfusion-diabetes-elderly (version 1.0.1). 
+PhysioNet. https://doi.org/10.13026/t92y-x219
+
+DISCLAIMER:
+
+This project is a research-only feasibility study. The machine learning models are 
+NOT validated for clinical decision-making. Do not use as a diagnostic tool.
+
+Prospective external validation, clinical trial data, and regulatory approval are 
+required before any real-world deployment.
+
+===============================================================================
