@@ -1,11 +1,11 @@
 /**
  * GE-79 MCI Explorer — D3.js Brain Animation #10 White
- * Mint-green particles wander freely on white background
+ * Mint-green particles move within the visible white circle.
  * 
  * Features:
  * - Mint-green particles (#00cc99) on white background
  * - D3 force simulation with circle collisions
- * - Particles wander freely within card boundaries
+ * - Particles remain inside the circular visual boundary
  * - Mouse interaction pulls particles toward cursor
  * - Canvas rendering (high performance)
  * - Varied particle sizes for organic appearance
@@ -136,8 +136,8 @@ const BrainAnimation = (function() {
    */
   function pointermoved(event) {
     const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    const x = (event.clientX - rect.left) * (config.width / rect.width);
+    const y = (event.clientY - rect.top) * (config.height / rect.height);
 
     if (nodes[0]) {
       // Constrain the attractor to the same visible circle as the particles.
