@@ -35,7 +35,29 @@ document.querySelectorAll('main section[id]').forEach(section => observer.observ
 
 const presentationVideo = document.querySelector('.video-frame video');
 if (presentationVideo) {
-  presentationVideo.addEventListener('canplay', () => presentationVideo.closest('.video-frame').classList.add('ready'), { once: true });
+  const videoFrame = presentationVideo.closest('.video-frame');
+  const videoToggle = videoFrame.querySelector('.video-toggle');
+  const videoReset = videoFrame.querySelector('.video-reset');
+  const syncVideoControls = () => {
+    const isPlaying = !presentationVideo.paused && !presentationVideo.ended;
+    videoFrame.classList.toggle('playing', isPlaying);
+    videoToggle.setAttribute('aria-pressed', String(isPlaying));
+    videoToggle.setAttribute('aria-label', isPlaying ? 'Pause presentation video' : 'Play presentation video');
+  };
+
+  videoToggle.addEventListener('click', () => {
+    if (presentationVideo.paused || presentationVideo.ended) presentationVideo.play();
+    else presentationVideo.pause();
+  });
+  videoReset.addEventListener('click', () => {
+    presentationVideo.pause();
+    presentationVideo.currentTime = 0;
+    syncVideoControls();
+  });
+  presentationVideo.addEventListener('play', syncVideoControls);
+  presentationVideo.addEventListener('pause', syncVideoControls);
+  presentationVideo.addEventListener('ended', syncVideoControls);
+  syncVideoControls();
 }
 
 // The D3 animation owns the dot canvas. The clean transparent head PNG stays as the top layer.
